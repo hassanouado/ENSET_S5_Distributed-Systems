@@ -25,12 +25,18 @@ Ensuite,on a  connecter au compte administrateur.
 ##### 5. Créer un client à sécuriser
 ![create_client](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/96d71f4f-a7b7-495b-9ef6-f68aca7f03e4)
 ![create_client](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/be45658a-d900-4b53-ba31-2c2e044545e0)
-![create_client2](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/b0c62188-e0e9-4b64-a0a3-390363a385db)
 ![create_client3](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/caf9c074-8805-424c-adf2-cdb4991cd782)
 ![create_client4](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/98b906f8-b06a-4d24-be55-493b5948b9a3)
 
 ##### 6. Créer des utilisateurs 
+![create)user](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/c0b61a16-ca19-4efd-bbd7-8dc480ecea5d)
+![reset_password](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/6391e913-d22b-4df1-9b2d-7ffd70ce1693)
+![create_user3](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/7ae5dd50-cbea-4235-8dda-12107a92f581)
 ##### 7. Créer des rôles
+ ###### ADMIN
+ ![Admin_create](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/e300ff02-f4c2-4441-bd3c-c1cbfe224f3c)
+ ###### USER
+ ![USER_Create](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/185a3099-27b5-45bd-9cb0-bdca7ba64347)
 ##### 8. Affecter les rôles aux utilisateurs
 ##### 9. Avec PostMan :
    ###### - Tester l'authentification avec le mot de passe

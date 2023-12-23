@@ -10,10 +10,12 @@
 ##### 1. Télécharger Keycloak 19
  Pour obtenir la version la plus récente de Keycloak, il est possible de la télécharger directement depuis le site officiel de Keycloak [Download](https://www.keycloak.org/) 
 ##### 2. Démarrer Keycloak
+Keycloak est lancé en utilisant la commande suivante   kc.bat start-dev
+![start_keycloak](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/8fa58de2-444f-4db3-8fb2-45716a72b55c)
 ##### 3. Créer un compte Admin
 ##### 4. Créer une Realm
 ##### 5. Créer un client à sécuriser
-##### 6. Créer des utilisateurs
+##### 6. Créer des utilisateurs 
 ##### 7. Créer des rôles
 ##### 8. Affecter les rôles aux utilisateurs
 ##### 9. Avec PostMan :

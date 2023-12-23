@@ -5,7 +5,10 @@
 
 ### Solution
 #### Partie 1 : 
+ ###### Architecture 
+ ![architecture](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/721b22b7-1ac2-4925-a040-69457a04d055)
 ##### 1. Télécharger Keycloak 19
+ Pour obtenir la version la plus récente de Keycloak, il est possible de la télécharger directement depuis le site officiel de Keycloak [Download](https://www.keycloak.org/) 
 ##### 2. Démarrer Keycloak
 ##### 3. Créer un compte Admin
 ##### 4. Créer une Realm

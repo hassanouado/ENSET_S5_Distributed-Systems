@@ -38,6 +38,8 @@ Ensuite,on a  connecter au compte administrateur.
  ###### USER
  ![USER_Create](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/185a3099-27b5-45bd-9cb0-bdca7ba64347)
 ##### 8. Affecter les rôles aux utilisateurs
+![affect_user1](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/41901de9-7919-47a2-9045-0eb49522a323)
+![affect_role2](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/9aafcf97-a8b8-4454-9ce6-5a4719a82bc7)
 ##### 9. Avec PostMan :
    ###### - Tester l'authentification avec le mot de passe
    ###### - Analyser les contenus des deux JWT Access Token et Refresh Token

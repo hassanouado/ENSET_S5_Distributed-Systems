@@ -10,7 +10,8 @@ Sur le site officiel de Kafka, télécharger la dernière version de Kafka.
 ```bash
 start .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
 ```
-![Exécution des commandes](Capture1.PNG```bash
+![Exécution des commandes](Capture1.PNG)
+```bash
 start .\bin\windows\kafka-server-start.bat .\config\server.properties
 ```
 

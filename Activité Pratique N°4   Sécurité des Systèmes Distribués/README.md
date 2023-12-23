@@ -11,8 +11,14 @@
  Pour obtenir la version la plus récente de Keycloak, il est possible de la télécharger directement depuis le site officiel de Keycloak [Download](https://www.keycloak.org/) 
 ##### 2. Démarrer Keycloak
 Keycloak est lancé en utilisant la commande suivante   kc.bat start-dev
+
 ![start_keycloak](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/8fa58de2-444f-4db3-8fb2-45716a72b55c)
 ##### 3. Créer un compte Admin
+À la première utilisation de la console d’administration, il faut créer un utilisateur administrateur de du serveur keycloak
+![create_compte_keycloak](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/d413e909-0722-4fa0-9e61-e372efd0d950)
+Ensuite,on a  connecter au compte administrateur.
+![login to keycloak](https://github.com/hassanouado/ENSET_S5_Distributed-Systems/assets/95369534/b55a9c12-a461-4ee4-95d6-d1bee9263765)
+
 ##### 4. Créer une Realm
 ##### 5. Créer un client à sécuriser
 ##### 6. Créer des utilisateurs 

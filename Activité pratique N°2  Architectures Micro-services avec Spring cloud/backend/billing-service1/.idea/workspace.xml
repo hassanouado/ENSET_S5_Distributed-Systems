@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="19c36657-207a-4bd7-8938-65cf71f98301" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/continents/continents.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/continents/continents.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/continents/continents.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/continents/continents.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/currencies/currencies.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/currencies/currencies.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/currencies/currencies.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/currencies/currencies.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/currency-deposit/currency-deposit.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/currency-deposit/currency-deposit.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/currency-deposit/currency-deposit.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/currency-deposit/currency-deposit.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/graphql.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/guard/security.guard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/model/continent.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/model/country.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/model/currency.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/model/wallet-transaction.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/model/wallet.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/navbar/navbar.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/navbar/navbar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/navbar/navbar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/navbar/navbar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/queries/graphql.queries.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/services/currency-deposit.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/services/security.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/wallet-transactions/wallet-transactions.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/wallet-transactions/wallet-transactions.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/wallet-transactions/wallet-transactions.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/wallet-transactions/wallet-transactions.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/wallets/wallets.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/wallets/wallets.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/wallets/wallets.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/app/wallets/wallets.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Activité Pratique N°4   Sécurité des Systèmes Distribués/wallet-front-angular-unsecured-master/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/TP2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/bouargalne/customerservice/CustomerServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/bouargalne/customerservice/entities/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/bouargalne/customerservice/repositories/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/test/java/com/bouargalne/customerservice/CustomerServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-discovery/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-discovery/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-discovery/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-discovery/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-discovery/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-discovery/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-discovery/services.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-discovery/src/main/java/com/example/eurekadiscovery/EurekaDiscoveryApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-discovery/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-discovery/src/test/java/com/example/eurekadiscovery/EurekaDiscoveryApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/ma/bouargalne/gateway/GatewayApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/resources/app.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/test/java/ma/bouargalne/gateway/GatewayApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/src/main/java/com/bouargalne/inventoryservice/InventoryServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/src/main/java/com/bouargalne/inventoryservice/entities/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/src/main/java/com/bouargalne/inventoryservice/repositories/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-service/src/test/java/com/bouargalne/inventoryservice/InventoryServiceApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2a1G6Kc4MHvpYpmu587sXiDNpRq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/pc/Desktop/alo/TP_SPRING/Activité pratique N°2  Architectures Micro-services avec Spring cloud/backend/billing-service1/src/main/java/com/hassan/billingservice1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pc\Desktop\alo\TP_SPRING\Activité pratique N°2  Architectures Micro-services avec Spring cloud\backend\billing-service1\src\main\java\com\hassan\billingservice1" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19c36657-207a-4bd7-8938-65cf71f98301" name="Changes" comment="" />
+      <created>1703478496576</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703478496576</updated>
+      <workItem from="1703478497677" duration="532000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -330,6 +330,11 @@ public class EurekaDiscoveryApplication {
 }
   ```
  ####  Tester le proxy en utilisant une configuration dynamique de Gestion des routes vers les micro services enregistrés dans l’annuaire Eureka Server
-  
+ 
+  ![enonce](captures/test1.PNG)
+    ![enonce](captures/test2.PNG)
+  ![enonce](captures/test3.PNG)
+
+
 
  

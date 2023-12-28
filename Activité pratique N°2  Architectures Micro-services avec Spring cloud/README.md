@@ -6,11 +6,10 @@
 ####  Architecture : 
 ![archi](captures/architectures.png)
 
-####  Micro-services :  
-* Customer-service :  
-  pour ce service on aura besoin de ces dependances :
+####  Micro-service Customer-service :  
+  * les dependencies de notre TP
   ```bash
-  <dependencies>
+   <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-rest</artifactId>
@@ -51,17 +50,77 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
   ```
-Pour la configuration dans le fichier application.properties on demarre le service dans le port 8081 
-et on met discovery en true pour que le service peut s'enregistrer automatiquement dans eureka:
+  * le fichier application properties
+ ```bash
+ server.port=8087
+ spring.application.name=customer-service
+ spring.datasource.url=jdbc:h2:mem:DB_Customer
+ spring.cloud.discovery.enabled=true
+  ```
+  *  l’entité Customer
 ```bash
-server.port=8081
-spring.application.name=customer-service
-spring.datasource.url=jdbc:h2:mem:DB_Customer
-spring.cloud.discovery.enabled=true
-```
-puis on remplie la base de donnees avec quelques enregistrement : 
+package com.Ouadouch.customerservice.entities;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+@Entity //pour JPA
+@Data @AllArgsConstructor @NoArgsConstructor @ToString
+public class Customer {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String email;
+}
+
+  ```
+  * l’interface CustomerRepository basée sur Spring Data
+   ```bash
+package com.Ouadouch.customerservice.repositories;
+
+import com.Ouadouch.customerservice.entities.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+@RepositoryRestResource
+public interface CustomerRepository extends JpaRepository<Customer,Long> {
+}
+  ```
+  * enregistrer quelque customer
 ```bash
+package com.Ouadouch.customerservice;
+
+import com.Ouadouch.customerservice.entities.Customer;
+import com.Ouadouch.customerservice.repositories.CustomerRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+
+import java.util.stream.Stream;
+
+@SpringBootApplication
+public class CustomerServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(CustomerServiceApplication.class, args);
+    }
+
     @Bean
     CommandLineRunner start(CustomerRepository customerRepository,
                             RepositoryRestConfiguration repositoryRestConfiguration
@@ -69,7 +128,7 @@ puis on remplie la base de donnees avec quelques enregistrement :
         repositoryRestConfiguration.exposeIdsFor(Customer.class);
         return args->{
 
-            Stream.of("hamid", "abdo", "karima", "ihssan", "khalid", "mouad", "samira").forEach(name -> {
+            Stream.of("hassan", "abderahmane", "fatima", "mustapha").forEach(name -> {
 
                 customerRepository.save(new Customer(name,name+"@gmail.com"));
 
@@ -77,146 +136,199 @@ puis on remplie la base de donnees avec quelques enregistrement :
 
             customerRepository.findAll().forEach(System.out::println);
         };
-```
-* inventory-service :
-  Pour ce service, la meme procedure que Customer service.
-* eureka-service :
+    }
+}
 
-   Pour le dependences de ce service on aura besoin seulement que de eureka server
-  ```bash
-   <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-   ```
-  pour la configuration de ce service
-  ```bash
-     #par défault 8761
-     server.port=8761
-     # dont register server itself as a client.
-     eureka.client.fetch-registry=false
-     # Does not register itself in the service registry.
-     eureka.client.register-with-eureka=false
-   ```
-si on connecte vers eureka service via le lien suivant http://localhost:8761 
-on trouve que les services sont bien enregistrees dans eureka
-![archi](captures/services.png) 
-
-* getway-service :
- voici les dependances de la getway 
-  ```bash
-    <dependencies>
-          <dependency>
-              <groupId>org.springframework.boot</groupId>
-              <artifactId>spring-boot-starter-actuator</artifactId>
-          </dependency>
-          <dependency>
-              <groupId>org.springframework.cloud</groupId>
-              <artifactId>spring-cloud-starter-gateway</artifactId>
-          </dependency>
-          <dependency>
-              <groupId>org.springframework.cloud</groupId>
-              <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-          </dependency>
-  
-          <dependency>
-              <groupId>org.springframework.boot</groupId>
-              <artifactId>spring-boot-starter-test</artifactId>
-              <scope>test</scope>
-          </dependency>
-      </dependencies>
   ```
-pour la configuration du getway 
-  ```bash
-  spring:
-    cloud:
-      gateway:
-        routes:
-          - id: r1
-            uri: http://localhost:8081/
-            predicates:
-              - Path = /customers/**
-          - id: r2
-            uri : http://localhost:8082/
-            predicates:
-              - Path= /products/**
-        globalcors:
-          corsConfigurations:
-            '[/**]':
-              allowedOrigins: "http://localhost:4200/*"
-              allowedHeaders: "*"
-              allowedMethods:
-                - GET
-                - POST
-                - PUT
-                - DELETE
-      discovery:
-        enabled: true
-  
-  server:
-    port: 8083
-  ```
-aussi
-  ```bash
-      //=>Méthode statique: je connais les routes
-      //@Bean
-      RouteLocator gatewayRoutes(RouteLocatorBuilder builder){ //configurer les rootes
-          return builder.routes()
-  //                .route(r->r.path("/customers/**").uri("http://localhost:8081/"))
-  //                .route(r->r.path("/products/**").uri("http://localhost:8082/"))
-                  .route(r->r.path("/customers/**").uri("lb://CUSTOMER-SERVICE"))
-                  .route(r->r.path("/products/**").uri("lb://PRODUCT-SERVICE"))
-                  .build();
-  
-      }
-  
-      //=>Méthode dynamique:
-      //  - je ne connais pas les route
-      //  - à chaque fois que tu reçoit une requete, regarde dans l'URL de la requete tu vas trouvé le nom du Micro Service
-      @Bean
-      DiscoveryClientRouteDefinitionLocator dynamicRoutes(
-              ReactiveDiscoveryClient rdc,
-              DiscoveryLocatorProperties dlp){
-  
-          return new DiscoveryClientRouteDefinitionLocator(rdc,dlp);
-  
-      }
-  ```
-si on essaye d'acceder aux services via la getway
-![archi](captures/getway.png) 
-
-* billing-service :
- dans ce services on aura besoin d'acceder aux donnees d'autres services, dans ce cas
-la on utilise les deux dependance suivantes :
+ ####  Micro-service Inventory-service :  
+  * le fichier application properties
  ```bash
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-openfeign</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-hateoas</artifactId>
-    </dependency>
- ```
-pour acceder au customer-service 
+    server.port=8082
+    spring.application.name=product-service
+    spring.datasource.url=jdbc:h2:mem:DB_Product
+    spring.cloud.discovery.enabled=true
+  ```
+  *  l’entité Product
 ```bash
-@FeignClient(name = "CUSTOMER-SERVICE")
-public interface CustomerRestClient {
+package com.Ouadouch.inventoryservice.entities;
 
-    @GetMapping(path = "/customers/{id}")
-    Customer getCustomerById(@PathVariable(name="id") Long id);
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Entity //pour JPA
+@Data @AllArgsConstructor @NoArgsConstructor @ToString
+public class Product {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private long price;
+    private long quantity;
+}
+
+
+  ```
+  * l’interface ProductRepository basée sur Spring Data
+   ```bash
+package com.Ouadouch.inventoryservice.repositories;
+
+import com.Ouadouch.inventoryservice.entities.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource
+public interface ProductRepository extends JpaRepository<Product,Long> {
+
+}
+  ```
+  * enregistrer quelque Product
+```bash
+package com.Ouadouch.inventoryservice;
+
+import com.Ouadouch.inventoryservice.entities.Product;
+import com.Ouadouch.inventoryservice.repositories.ProductRepository;
+import org.apache.commons.lang.math.RandomUtils;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+
+import java.util.stream.Stream;
+
+@SpringBootApplication
+public class InventoryServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(InventoryServiceApplication.class, args);
+    }
+    @Bean
+    CommandLineRunner start(ProductRepository productRepository,
+                            RepositoryRestConfiguration repositoryRestConfiguration
+    ){
+        repositoryRestConfiguration.exposeIdsFor(Product.class);
+        return args -> {
+
+            Stream.of("PC DELL", "PC HP", "PC ACER").forEach(p -> {
+
+                productRepository.save(new Product(p, RandomUtils.nextInt(1000), RandomUtils.nextInt(30)));
+
+            });
+
+            productRepository.findAll().forEach(System.out::println);
+        };
+    }
+
 }
 ```
-pour acceder au product-service 
+ ####  Gateway service:
+ ```bash
+package ma.Ouadouch.gateway;
 
-```bash
-@FeignClient(name = "PRODUCT-SERVICE")
-public interface ProductRestClient {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.ReactiveDiscoveryClient;
+import org.springframework.cloud.gateway.discovery.DiscoveryClientRouteDefinitionLocator;
+import org.springframework.cloud.gateway.discovery.DiscoveryLocatorProperties;
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
 
-    @GetMapping(path = "/products")
-    PagedModel<Product> pageProducts(); //@RequestParam(value = "name") int page, @RequestParam(value = "size") int size
+@SpringBootApplication
+public class GatewayApplication {
 
-    @GetMapping(path = "/products/{id}")
-    Product getProductById(@PathVariable Long id);
+    public static void main(String[] args) {
+        SpringApplication.run(GatewayApplication.class, args);
+    }
+    //=>Méthode statique: je connais les routes
+    //@Bean
+    RouteLocator gatewayRoutes(RouteLocatorBuilder builder){ //configurer les rootes
+        return builder.routes()
+//                .route(r->r.path("/customers/**").uri("http://localhost:8081/"))
+//                .route(r->r.path("/products/**").uri("http://localhost:8082/"))
+                .route(r->r.path("/customers/**").uri("lb://CUSTOMER-SERVICE"))
+                .route(r->r.path("/products/**").uri("lb://PRODUCT-SERVICE"))
+                .build();
+
+    }
+
+    @Bean
+    DiscoveryClientRouteDefinitionLocator dynamicRoutes(
+            ReactiveDiscoveryClient rdc,
+            DiscoveryLocatorProperties dlp){
+
+        return new DiscoveryClientRouteDefinitionLocator(rdc,dlp);
+
+    }
+
+
 }
+
 ```
+ ```bash
+server.port=8086
+spring.application.name=gateway-service
+spring.cloud.discovery.enabled=true
+  ```
+ ```bash
+    spring:
+  cloud:
+    gateway:
+      routes:
+        - id: r1
+          uri: http://localhost:8087/
+          predicates:
+            - Path = /customers/**
+        - id: r2
+          uri : http://localhost:8082/
+          predicates:
+            - Path= /products/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200/*"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+    discovery:
+      enabled: true
+
+server:
+  port: 8086
+  ```
+ #### Créer l’annuaire Registry Service basé sur NetFlix Eureka Server
+  ```bash
+#par défault 8761
+server.port=8761
+eureka.client.fetch-registry=false
+eureka.client.register-with-eureka=false
+
+  ```
+ ```bash
+package com.example.eurekadiscovery;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@EnableEurekaServer
+public class EurekaDiscoveryApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaDiscoveryApplication.class, args);
+    }
+
+}
+  ```
+ 
+
+ 

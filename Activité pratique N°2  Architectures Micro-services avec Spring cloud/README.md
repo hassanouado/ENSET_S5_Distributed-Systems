@@ -335,6 +335,216 @@ public class EurekaDiscoveryApplication {
     ![enonce](captures/test2.PNG)
   ![enonce](captures/test3.PNG)
 
+ ####  Créer Le service Billing-Service en utilisant Open Feign pour communiquer avec les services Customer-service et Inventory-service
+ ```bash
+package com.Ouadouch.billingservice.entities;
+
+import com.Ouadouch.billingservice.model.Customer;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Collection;
+import java.util.Date;
+
+@Entity
+@Data @AllArgsConstructor @NoArgsConstructor
+public class Bill {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Date billingDate;
+    @OneToMany(mappedBy = "bill")
+    private Collection<ProductItem> productItems;
+    private Long customerId;
+    @Transient //pour la persistence, cad dans la bas de donnée je l'ai pas
+    private Customer customer;
+}
+  ```
+```bash
+package com.Ouadouch.billingservice.entities;
+
+import com.Ouadouch.billingservice.model.Product;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data @AllArgsConstructor @NoArgsConstructor
+public class ProductItem {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    //    private String productName;
+    private long price;
+    private long quantity;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ManyToOne
+    private Bill bill;
+    private Long productId;
+    @Transient //pour la persistence, cad dans la bas de donnée je l'ai pas
+    private Product product;
 
 
+}
+
+  ```
+```bash
+package com.Ouadouch.billingservice.feign;
+
+import com.Ouadouch.billingservice.model.Customer;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@FeignClient(name = "CUSTOMER-SERVICE")
+public interface CustomerRestClient {
+
+    @GetMapping(path = "/customers/{id}")
+    Customer getCustomerById(@PathVariable(name="id") Long id);
+}
+  ```
+```bash
+package com.Ouadouch.billingservice.feign;
+
+import com.Ouadouch.billingservice.model.Product;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.hateoas.PagedModel;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@FeignClient(name = "PRODUCT-SERVICE")
+public interface ProductRestClient {
+
+    @GetMapping(path = "/products")
+    PagedModel<Product> pageProducts(); //@RequestParam(value = "name") int page, @RequestParam(value = "size") int size
+
+    @GetMapping(path = "/products/{id}")
+    Product getProductById(@PathVariable Long id);
+}
+  ```
+```bash
+package com.Ouadouch.billingservice.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data @AllArgsConstructor @NoArgsConstructor
+public class Customer {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String email;
+}
+
+  ```
+```bash
+package com.Ouadouch.billingservice.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data @AllArgsConstructor @NoArgsConstructor
+public class Product {
+    private Long id;
+    private String name;
+    private long price;
+    private long quantity;
+}
+
+  ```
+```bash
+package com.Ouadouch.billingservice.repositories;
+
+import com.Ouadouch.billingservice.entities.Bill;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+
+import java.util.List;
+
+@RepositoryRestResource
+public interface BillRepository extends JpaRepository<Bill,Long> {
  
+    List<Bill> findByCustomerId(Long customerId);
+}
+
+  ```
+```bash
+package com.Ouadouch.billingservice.repositories;
+
+import com.Ouadouch.billingservice.entities.ProductItem;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import java.util.Collection;
+
+@RepositoryRestResource
+public interface ProductItemRepository extends JpaRepository<ProductItem,Long> {
+    public Collection<ProductItem> findBillById(Long id);
+}
+
+  ```
+ ```bash
+package com.Ouadouch.billingservice.web;
+
+import com.Ouadouch.billingservice.entities.Bill;
+import com.Ouadouch.billingservice.feign.CustomerRestClient;
+import com.Ouadouch.billingservice.feign.ProductRestClient;
+import com.Ouadouch.billingservice.model.Product;
+import com.Ouadouch.billingservice.repositories.BillRepository;
+import com.Ouadouch.billingservice.repositories.ProductItemRepository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+public class BillingRestController {
+
+    private BillRepository billRepository;
+    private ProductItemRepository productItemRepository;
+    private CustomerRestClient customerRestClient;
+    private ProductRestClient productRestClient;
+
+    public BillingRestController(
+            BillRepository billRepository,
+            ProductItemRepository productItemRepository,
+            CustomerRestClient customerRestClient,
+            ProductRestClient productRestClient
+    ) {
+        this.billRepository = billRepository;
+        this.productItemRepository = productItemRepository;
+        this.customerRestClient = customerRestClient;
+        this.productRestClient = productRestClient;
+    }
+
+    @GetMapping(path = "/fullBill/{id}")
+    public Bill getBillById(@PathVariable(name = "id") Long id){
+        Bill bill=billRepository.findById(id).get();
+        bill.setCustomer(customerRestClient.getCustomerById(bill.getCustomerId()));
+        bill.getProductItems().forEach(pi->{
+            Product product=productRestClient.getProductById((pi.getProductId()));
+            pi.setProduct(product);
+        });
+        return bill;
+    }
+
+    @GetMapping(path = "/findByCustomerId/{customerId}")
+    public List<Bill> findByCustomerId(@PathVariable(name = "customerId") Long customerId){
+        List<Bill> billList = billRepository.findByCustomerId(customerId);
+        return billList;
+    }
+}
+
+
+  ```

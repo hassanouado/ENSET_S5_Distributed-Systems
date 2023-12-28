@@ -1,7 +1,7 @@
 ## Activité pratique N°2 : Architectures Micro-services avec Spring cloud 
 
 ####  énoncé : 
-![enonce](captures/ennonce.png)
+![enonce](captures/enonce.png)
 
 ####  Architecture : 
 ![archi](captures/architectures.png)

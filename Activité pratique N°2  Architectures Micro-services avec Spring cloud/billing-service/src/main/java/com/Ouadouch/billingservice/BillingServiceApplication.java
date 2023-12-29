@@ -1,13 +1,13 @@
-package com.bouargalne.billingservice;
+package com.Ouadouch.billingservice;
 
-import com.bouargalne.billingservice.entities.Bill;
-import com.bouargalne.billingservice.entities.ProductItem;
-import com.bouargalne.billingservice.feign.CustomerRestClient;
-import com.bouargalne.billingservice.feign.ProductRestClient;
-import com.bouargalne.billingservice.model.Customer;
-import com.bouargalne.billingservice.model.Product;
-import com.bouargalne.billingservice.repositories.BillRepository;
-import com.bouargalne.billingservice.repositories.ProductItemRepository;
+import com.Ouadouch.billingservice.feign.CustomerRestClient;
+import com.Ouadouch.billingservice.feign.ProductRestClient;
+import com.Ouadouch.billingservice.model.Customer;
+import com.Ouadouch.billingservice.model.Product;
+import com.Ouadouch.billingservice.repositories.BillRepository;
+import com.Ouadouch.billingservice.repositories.ProductItemRepository;
+import com.Ouadouch.billingservice.entities.Bill;
+import com.Ouadouch.billingservice.entities.ProductItem;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.CommandLineRunner;

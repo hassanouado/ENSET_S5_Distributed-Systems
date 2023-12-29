@@ -1,6 +1,6 @@
-package com.bouargalne.billingservice.feign;
+package com.Ouadouch.billingservice.feign;
 
-import com.bouargalne.billingservice.model.Customer;
+import com.Ouadouch.billingservice.model.Customer;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

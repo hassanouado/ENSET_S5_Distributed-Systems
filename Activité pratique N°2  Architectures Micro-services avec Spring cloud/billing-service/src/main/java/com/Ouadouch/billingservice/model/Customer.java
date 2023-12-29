@@ -1,4 +1,4 @@
-package com.bouargalne.billingservice.model;
+package com.Ouadouch.billingservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

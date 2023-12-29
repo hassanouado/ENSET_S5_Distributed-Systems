@@ -1,4 +1,4 @@
-package com.bouargalne.billingservice;
+package com.Ouadouch.billingservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

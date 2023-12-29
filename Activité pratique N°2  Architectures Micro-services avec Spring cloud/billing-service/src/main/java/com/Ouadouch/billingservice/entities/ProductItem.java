@@ -1,6 +1,6 @@
-package com.bouargalne.billingservice.entities;
+package com.Ouadouch.billingservice.entities;
 
-import com.bouargalne.billingservice.model.Product;
+import com.Ouadouch.billingservice.model.Product;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

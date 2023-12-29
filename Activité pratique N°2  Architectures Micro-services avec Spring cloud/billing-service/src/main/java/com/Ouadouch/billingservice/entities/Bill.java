@@ -1,6 +1,6 @@
-package com.bouargalne.billingservice.entities;
+package com.Ouadouch.billingservice.entities;
 
-import com.bouargalne.billingservice.model.Customer;
+import com.Ouadouch.billingservice.model.Customer;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

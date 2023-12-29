@@ -1,6 +1,6 @@
-package com.bouargalne.billingservice.feign;
+package com.Ouadouch.billingservice.feign;
 
-import com.bouargalne.billingservice.model.Product;
+import com.Ouadouch.billingservice.model.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.web.bind.annotation.GetMapping;

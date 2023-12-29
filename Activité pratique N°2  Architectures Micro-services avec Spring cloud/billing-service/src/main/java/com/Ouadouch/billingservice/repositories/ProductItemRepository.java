@@ -1,6 +1,6 @@
-package com.bouargalne.billingservice.repositories;
+package com.Ouadouch.billingservice.repositories;
 
-import com.bouargalne.billingservice.entities.ProductItem;
+import com.Ouadouch.billingservice.entities.ProductItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

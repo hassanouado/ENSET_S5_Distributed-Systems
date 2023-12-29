@@ -21,7 +21,6 @@ public class AccountAggregate {
 
     public AccountAggregate() {
     }
-
     @CommandHandler
     public AccountAggregate(CreateAccountCommand command) {
         if (command.getInitialBalance() < 0) {
@@ -30,7 +29,6 @@ public class AccountAggregate {
         AggregateLifecycle
                 .apply(new AccountCreatedEvent(command.getId(), command.getInitialBalance(), command.getCurrency()));
     }
-
     @EventSourcingHandler
     public void on(AccountCreatedEvent event) {
         this.id = event.getId();
@@ -39,7 +37,6 @@ public class AccountAggregate {
         this.status = AccountStatus.CREATED;
         AggregateLifecycle.apply(new AccountActivatedEvent(this.id, AccountStatus.ACTIVATED));
     }
-
     @EventSourcingHandler
     public void on(AccountActivatedEvent event) {
         this.status = event.getAccountStatus();

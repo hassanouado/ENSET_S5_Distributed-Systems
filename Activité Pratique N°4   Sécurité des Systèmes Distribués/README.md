@@ -5,7 +5,8 @@
 
 ### Sécuriser avec Keycloak les applications Wallet App
 
-<img src="capture3/Capture42.PNG">
+<img src="capture3/Capture22.PNG">
+<img src="capture3/Capture21.PNG">
 
 
 

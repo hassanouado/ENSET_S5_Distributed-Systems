@@ -1,6 +1,6 @@
 # Activité Pratique N°4 : Sécurité des Systèmes Distribués
 
-<img src="capture3/Capture.PNG">
+<img src="capture3/Capture42.PNG">
 
 ## Partie 1 :
 
